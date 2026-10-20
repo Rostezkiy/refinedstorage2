@@ -1,5 +1,6 @@
 dependencyResolutionManagement {
     repositories {
+        mavenLocal()
         maven {
             name = "Refined Architect"
             url = uri("https://maven.creeperhost.net")
@@ -18,6 +19,7 @@ dependencyResolutionManagement {
 
 pluginManagement {
     repositories {
+        mavenLocal()
         mavenCentral()
         gradlePluginPortal()
         maven {
