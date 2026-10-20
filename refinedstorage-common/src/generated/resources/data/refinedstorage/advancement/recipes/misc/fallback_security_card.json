@@ -13,7 +13,9 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "refinedstorage:fallback_security_card"
+        "recipes": [
+          "refinedstorage:fallback_security_card"
+        ]
       },
       "trigger": "minecraft:recipe_unlocked"
     }

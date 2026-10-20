@@ -3,12 +3,12 @@ package com.refinedmods.refinedstorage.common.support.widget;
 import com.refinedmods.refinedstorage.common.Platform;
 import com.refinedmods.refinedstorage.common.content.KeyMappings;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.input.KeyEvent;
 import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.network.chat.Component;
-import org.lwjgl.glfw.GLFW;
 
 public class SearchFieldWidget extends EditBox {
     private final History history;
@@ -66,20 +66,20 @@ public class SearchFieldWidget extends EditBox {
     }
 
     private boolean historyRelatedKeyPressed(final int keyCode) {
-        return keyCode == GLFW.GLFW_KEY_UP || keyCode == GLFW.GLFW_KEY_DOWN
-            || keyCode == GLFW.GLFW_KEY_ENTER || keyCode == GLFW.GLFW_KEY_KP_ENTER;
+        return keyCode == InputConstants.KEY_UP || keyCode == InputConstants.KEY_DOWN
+            || keyCode == InputConstants.KEY_RETURN || keyCode == InputConstants.KEY_NUMPADENTER;
     }
 
     private boolean shouldMoveControlToParent(final int keyCode, final boolean canLoseFocus) {
-        if (keyCode == GLFW.GLFW_KEY_UP || keyCode == GLFW.GLFW_KEY_DOWN) {
-            final String newValue = keyCode == GLFW.GLFW_KEY_UP ? history.older() : history.newer();
+        if (keyCode == InputConstants.KEY_UP || keyCode == InputConstants.KEY_DOWN) {
+            final String newValue = keyCode == InputConstants.KEY_UP ? history.older() : history.newer();
             setValue(newValue);
-        } else if (keyCode == GLFW.GLFW_KEY_ENTER || keyCode == GLFW.GLFW_KEY_KP_ENTER) {
+        } else if (keyCode == InputConstants.KEY_RETURN || keyCode == InputConstants.KEY_NUMPADENTER) {
             saveHistory();
             if (canLoseFocus) {
                 setFocused(false);
             }
-        } else if (keyCode == GLFW.GLFW_KEY_ESCAPE) {
+        } else if (keyCode == InputConstants.KEY_ESCAPE) {
             saveHistory();
             setFocused(false);
             // If we are autoselected, we need to move control back to the parent straight away.

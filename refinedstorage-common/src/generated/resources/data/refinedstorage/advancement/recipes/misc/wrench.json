@@ -13,7 +13,9 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "refinedstorage:wrench"
+        "recipes": [
+          "refinedstorage:wrench"
+        ]
       },
       "trigger": "minecraft:recipe_unlocked"
     }

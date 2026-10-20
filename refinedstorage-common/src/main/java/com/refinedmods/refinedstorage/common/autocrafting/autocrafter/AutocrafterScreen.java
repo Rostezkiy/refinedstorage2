@@ -12,6 +12,7 @@ import com.refinedmods.refinedstorage.common.support.widget.TextMarquee;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
@@ -25,7 +26,6 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 import org.jspecify.annotations.Nullable;
-import org.lwjgl.glfw.GLFW;
 
 import static com.refinedmods.refinedstorage.common.util.IdentifierUtil.createIdentifier;
 import static com.refinedmods.refinedstorage.common.util.IdentifierUtil.createTranslation;
@@ -213,11 +213,11 @@ public class AutocrafterScreen extends AbstractBaseScreen<AutocrafterContainerMe
     }
 
     private boolean saveOrCancel(final int key) {
-        if ((key == GLFW.GLFW_KEY_ENTER || key == GLFW.GLFW_KEY_KP_ENTER)) {
+        if ((key == InputConstants.KEY_RETURN || key == InputConstants.KEY_NUMPADENTER)) {
             getMenu().changeName(requireNonNull(nameField).getValue());
             setEditName(false);
             return true;
-        } else if (key == GLFW.GLFW_KEY_ESCAPE) {
+        } else if (key == InputConstants.KEY_ESCAPE) {
             setEditName(false);
             requireNonNull(nameField).setValue(titleMarquee.getText().getString());
             return true;
@@ -230,7 +230,7 @@ public class AutocrafterScreen extends AbstractBaseScreen<AutocrafterContainerMe
         if (hoveredSlot instanceof PatternSlot patternSlot
             && !patternSlot.hasItem()
             && getMenu().getCarried().isEmpty()) {
-            graphics.tooltip(font, EMPTY_PATTERN_SLOT, x, y, DefaultTooltipPositioner.INSTANCE, null);
+            graphics.tooltip(font, EMPTY_PATTERN_SLOT, x, y, DefaultTooltipPositioner.INSTANCE, null, false);
             return;
         }
         final Component chainingTitle = getChainingTitle(getMenu());
@@ -244,7 +244,7 @@ public class AutocrafterScreen extends AbstractBaseScreen<AutocrafterContainerMe
                 x,
                 y,
                 DefaultTooltipPositioner.INSTANCE,
-                null
+                null, false
             );
             return;
         }

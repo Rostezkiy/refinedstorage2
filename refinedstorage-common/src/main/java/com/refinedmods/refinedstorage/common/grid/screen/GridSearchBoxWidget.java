@@ -68,7 +68,7 @@ class GridSearchBoxWidget extends SearchFieldWidget implements GridSearchBox {
     }
 
     private Component toComponent(final SyntaxHighlightedCharacter character) {
-        final ChatFormatting color = ChatFormatting.getByName(character.getColor());
+        final ChatFormatting color = ChatFormatting.valueOf(character.getColor());
         return Component.literal(character.getCharacter()).withStyle(color == null ? ChatFormatting.WHITE : color);
     }
 

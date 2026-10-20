@@ -14,7 +14,6 @@ import com.refinedmods.refinedstorage.common.support.resource.ItemResource;
 import java.net.URI;
 
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
@@ -59,10 +58,9 @@ public class FuzzyGridOperations implements GridOperations {
         if (!success) {
             LOGGER.warn("Failed to extract resource in Grid: {}", resource);
             if (resource instanceof ItemResource itemResource) {
-                itemResource.components().entrySet().forEach(e -> {
-                    final DataComponentType<?> componentType = e.getKey();
-                    final Identifier key = BuiltInRegistries.DATA_COMPONENT_TYPE.getKey(componentType);
-                    LOGGER.warn("Component {} = {}", key, e.getValue());
+                itemResource.components().split().added().forEach(component -> {
+                    final Identifier key = BuiltInRegistries.DATA_COMPONENT_TYPE.getKey(component.type());
+                    LOGGER.warn("Component {} = {}", key, component.value());
                 });
             }
         }

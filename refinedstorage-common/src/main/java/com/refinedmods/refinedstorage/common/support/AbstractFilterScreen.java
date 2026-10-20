@@ -66,7 +66,7 @@ public abstract class AbstractFilterScreen<T extends AbstractBaseContainerMenu> 
                     mouseX,
                     mouseY,
                     DefaultTooltipPositioner.INSTANCE,
-                    null
+                    null, false
                 );
                 return true;
             }
