@@ -16,6 +16,7 @@ repositories {
 refinedarchitect {
     modId = "refinedstorage"
     fabric()
+    gameTests()
     publishing {
         maven = true
         curseForge = "243076"
@@ -67,6 +68,12 @@ dependencies {
     commonJava(project(path = ":refinedstorage-autocrafting-api", configuration = "commonJava"))
     commonJava(project(path = ":refinedstorage-query-parser", configuration = "commonJava"))
 }
+
+val gametestSources = project(":refinedstorage-common").file("src/gametest")
+val testSourceSet = extensions.getByType<SourceSetContainer>()["test"]
+
+testSourceSet.java.srcDir(gametestSources.resolve("java"))
+testSourceSet.resources.srcDir(gametestSources.resolve("resources"))
 
 tasks.withType(ProcessResources::class.java) {
     duplicatesStrategy = DuplicatesStrategy.INCLUDE

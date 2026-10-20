@@ -44,6 +44,15 @@ dependencies {
     commonJava(project(path = ":refinedstorage-query-parser", configuration = "commonJava"))
 }
 
+val gametestSources = project(":refinedstorage-common").file("src/gametest")
+
+extensions.getByType<SourceSetContainer>().apply {
+    named("test") {
+        java.srcDir(gametestSources.resolve("java"))
+        resources.srcDir(gametestSources.resolve("resources"))
+    }
+}
+
 base {
     archivesName.set("refinedstorage-neoforge")
 }

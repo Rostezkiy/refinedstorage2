@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "refinedstorage-gametest",
+  "version": "1.0.0",
+  "name": "Refined Storage Game Tests",
+  "description": "Fabric game test entrypoints for Refined Storage.",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-gametest": [
+      "com.refinedmods.refinedstorage.fabric.gametest.AutocrafterGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.CableLikePartsConnectionGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.ConstructorGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.ControllerGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.DestructorGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.DetectorGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.DiskInterfaceGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.ExporterGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.FluidDiskDriveGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.FluidExternalStorageGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.FluidStorageBlockGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.FullBlocksConnectionGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.ImporterGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.InterfaceGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.ItemDiskDriveGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.ItemExternalStorageGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.ItemStorageBlockGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.NetworkTransmitterReceiverGameTests",
+      "com.refinedmods.refinedstorage.fabric.gametest.RelayGameTests"
+    ]
+  },
+  "depends": {
+    "refinedstorage": "*",
+    "fabric-gametest-api-v1": "*"
+  }
+}

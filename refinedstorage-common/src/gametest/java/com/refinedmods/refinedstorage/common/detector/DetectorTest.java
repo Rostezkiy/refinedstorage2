@@ -7,7 +7,7 @@ import com.refinedmods.refinedstorage.common.MinecraftIntegrationTest;
 import net.minecraft.core.Direction;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.RedStoneWireBlock;
+import net.minecraft.world.level.block.RedstoneWireBlock;
 
 import static com.refinedmods.refinedstorage.common.GameTestUtil.asResource;
 import static com.refinedmods.refinedstorage.common.GameTestUtil.getItemAsDamaged;
@@ -36,7 +36,7 @@ public final class DetectorTest {
                     helper,
                     pos
                 ))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenSucceed();
         });
     }
@@ -63,17 +63,17 @@ public final class DetectorTest {
                     new ResourceAmount(asResource(DIRT), 10),
                     new ResourceAmount(asResource(STONE), 15)
                 ))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenExecute(() -> detector.setAmount(4))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenExecute(() -> detector.setAmount(5))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenExecute(() -> detector.setAmount(6))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenExecute(() -> detector.setAmount(10))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenExecute(() -> detector.setAmount(15))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 15))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 15))
                 .thenSucceed();
         });
     }
@@ -100,19 +100,19 @@ public final class DetectorTest {
                     new ResourceAmount(asResource(DIRT), 10),
                     new ResourceAmount(asResource(STONE), 15)
                 ))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenExecute(() -> detector.setAmount(8))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenExecute(() -> detector.setAmount(10))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 15))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 15))
                 .thenExecute(() -> {
                     detector.setConfiguredResource(asResource(damagedDiamondChestplate));
                     detector.setAmount(1);
                 })
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenExecute(networkIsAvailable(helper, pos, network ->
                     insert(helper, network, asResource(damagedDiamondChestplate), 1)))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 15))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 15))
                 .thenSucceed();
         });
     }
@@ -140,19 +140,19 @@ public final class DetectorTest {
                     new ResourceAmount(asResource(DIRT), 10),
                     new ResourceAmount(asResource(STONE), 15)
                 ))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenExecute(() -> detector.setAmount(8))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenExecute(() -> detector.setAmount(10))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 15))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 15))
                 .thenExecute(() -> {
                     detector.setConfiguredResource(asResource(damagedDiamondChestplate));
                     detector.setAmount(1);
                 })
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenExecute(networkIsAvailable(helper, pos, network ->
                     insert(helper, network, asResource(damagedDiamondChestplate), 1)))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 15))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 15))
                 .thenSucceed();
         });
     }
@@ -179,15 +179,15 @@ public final class DetectorTest {
                     new ResourceAmount(asResource(DIRT), 10),
                     new ResourceAmount(asResource(STONE), 15)
                 ))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenExecute(() -> detector.setAmount(16))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenExecute(() -> detector.setAmount(14))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenExecute(() -> detector.setAmount(10))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenExecute(() -> detector.setAmount(5))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 15))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 15))
                 .thenSucceed();
         });
     }
@@ -219,9 +219,9 @@ public final class DetectorTest {
                     new ResourceAmount(asResource(DIAMOND_CHESTPLATE.getDefaultInstance()), 1),
                     new ResourceAmount(asResource(damagedDiamondChestplate), 1)
                 ))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 0))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 0))
                 .thenExecute(() -> detector.setAmount(2))
-                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedStoneWireBlock.POWER, 15))
+                .thenWaitUntil(() -> helper.assertBlockProperty(pos.north(), RedstoneWireBlock.POWER, 15))
                 .thenSucceed();
         });
     }
